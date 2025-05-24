@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Your Clients</h2>
+<a href="/clients/add">➕ Add New Client</a>
+<ul>
+    {% for client in clients %}
+    <li>
+        <strong>{{ client.name }}</strong> — {{ client.email }} | {{ client.phone }}
+        <br>
+        <a href="/clients/edit/{{ client.id }}">✏️ Edit</a> |
+        <a href="/clients/delete/{{ client.id }}">🗑️ Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

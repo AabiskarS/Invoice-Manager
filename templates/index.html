@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>📊 Finance Dashboard</h2>
+
+<div class="stats">
+    <div class="card">
+        <h3>Total Paid</h3>
+        <p class="paid">${{ "%.2f"|format(total_paid) }}</p>
+    </div>
+    <div class="card">
+        <h3>Total Unpaid</h3>
+        <p class="unpaid">${{ "%.2f"|format(total_unpaid) }}</p>
+    </div>
+</div>
+
+<canvas id="chart" width="400" height="200" style="margin-top: 2rem;"></canvas>
+
+<h3>🕒 Upcoming Invoices</h3>
+<ul>
+    {% if upcoming %}
+        {% for inv in upcoming %}
+            <li>
+                Invoice #{{ inv.id }} — Due {{ inv.due_date }} — ${{ "%.2f"|format(inv.total) }}
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>No upcoming invoices.</li>
+    {% endif %}
+</ul>
+{% endblock %}
