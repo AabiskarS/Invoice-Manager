@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Edit Invoice #{{ invoice.id }}</h2>
+
+<form method="post">
+    <label for="date">Invoice Date</label>
+    <input type="date" name="date" value="{{ invoice.date }}" required>
+
+    <label for="due_date">Due Date</label>
+    <input type="date" name="due_date" value="{{ invoice.due_date }}" required>
+
+    <button type="submit">💾 Save Changes</button>
+</form>
+
+<p><a href="/invoices/{{ invoice.id }}">← Back to Invoice</a></p>
+{% endblock %}

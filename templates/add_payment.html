@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Record Payment for Invoice #{{ invoice.id }}</h2>
+
+<p><strong>Client:</strong> {{ invoice.client_id }}</p>
+<p><strong>Total Due:</strong> ${{ "%.2f"|format(invoice.total) }}</p>
+<p><strong>Status:</strong> {{ invoice.status }}</p>
+
+<form method="post">
+    <label for="amount">Payment Amount:</label>
+    <input type="number" name="amount" id="amount" step="0.01" required>
+
+    <label for="date">Payment Date:</label>
+    <input type="date" name="date" id="date" value="{{ today }}" required>
+
+    <button type="submit">Submit Payment</button>
+</form>
+
+<p><a href="/invoices/{{ invoice.id }}">← Back to Invoice</a></p>
+{% endblock %}
