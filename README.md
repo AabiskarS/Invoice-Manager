@@ -101,6 +101,14 @@ All sensitive routes are protected by the `login_required` decorator. Passwords 
 
 ---
 
+## 🚀 Available on Gumroad
+
+You can now get the complete source code and deploy-ready package of this Invoice Manager Flask App on Gumroad:
+
+👉 [Get it here](https://aabiskar.gumroad.com/l/agpyxn) – One-time purchase, fully open-source, MIT license.
+
+---
+
 ## Challenges
 
 - Designing dynamic form fields for invoice line items without JS frameworks
